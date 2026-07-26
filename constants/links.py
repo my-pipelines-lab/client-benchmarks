@@ -1,0 +1,1 @@
+LINK_EXAMPLE: str = " https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='01-01-2026'&@dataFinalCotacao='07-26-2026'&$top=100000&$format=json "
