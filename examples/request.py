@@ -3,5 +3,5 @@ import requests
 from wrapper import benchmark
 
 @benchmark
-def run_requests(url, framework):
+def extrat_by_request(url, framework):
     return requests.get(url, framework)
