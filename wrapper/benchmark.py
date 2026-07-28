@@ -1,13 +1,11 @@
 import inspect
-from typing import Callable
-from time import perf_counter
 from csv import writer
 from pathlib import Path
-
+from time import perf_counter
 
 path = Path('benchmark.csv')
 
-def benchmark(func: Callable) -> Callable:
+def benchmark(func):
 
     if inspect.iscoroutinefunction(func):
         async def async_wrapper(url, framework):
@@ -19,7 +17,7 @@ def benchmark(func: Callable) -> Callable:
 
             execution_time = (end - start)
 
-            with path.open('a', newline='') as csvfile:
+            with path.open('a', newline='') as csvfile:  # noqa: ASYNC230
                 csvwriter = writer(csvfile)
 
                 if writer_header:
